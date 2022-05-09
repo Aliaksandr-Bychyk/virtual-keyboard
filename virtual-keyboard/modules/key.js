@@ -1,5 +1,5 @@
 export default class keyElement {
-  constructor (en, enShift, ru, ruShift, options = "", keyEvent) {
+  constructor(en, enShift, ru, ruShift, options = "", keyEvent) {
     this.en = en;
     this.enShift = enShift;
     this.ru = ru;
@@ -11,7 +11,7 @@ export default class keyElement {
     this.caps = false;
   }
   create() {
-    
+
     let div = document.createElement("div");
     div.classList.add("key");
     if (this.options.length != 0) {
@@ -21,10 +21,10 @@ export default class keyElement {
     document.addEventListener("keyup", (e) => {
       if (e.code == this.keyEvent && e.code == "CapsLock") {
         return this.caps ? animationUnPressed() : animationPressed();
-      } 
+      }
       if (e.code == this.keyEvent) {
         return animationUnPressed();
-      } 
+      }
     });
     document.addEventListener("keydown", (e) => {
       e.preventDefault();
@@ -34,41 +34,83 @@ export default class keyElement {
       if (e.code == this.keyEvent && e.code == "Backspace") {
         animationPressed();
         return backspace();
-      } 
+      }
       if (e.code == this.keyEvent && e.code == "Space") {
         animationPressed();
         return space();
-      } 
+      }
       if (e.code == this.keyEvent && e.code == "Tab") {
         animationPressed();
         return tab();
-      } 
+      }
       if (e.code == this.keyEvent && e.code == "Enter") {
         animationPressed();
         return enter();
-      } 
+      }
       if (e.code == this.keyEvent && e.code == "ShiftLeft") {
         return animationPressed();
-      } 
+      }
       if (e.code == this.keyEvent && e.code == "ShiftRight") {
         return animationPressed();
-      } 
+      }
       if (e.code == this.keyEvent && e.code == "ControlLeft") {
         return animationPressed();
-      } 
+      }
       if (e.code == this.keyEvent && e.code == "ControlRight") {
         return animationPressed();
-      } 
+      }
       if (e.code == this.keyEvent && e.code == "CapsLock") {
         return animationPressed();
-      } 
+      }
+      if (e.code == this.keyEvent && e.code == "Delete") {
+        animationPressed();
+        return deleteKey();
+      }
       if (e.code == this.keyEvent) {
         animationPressed();
         return click(this.lang);
       }
     });
 
-    div.addEventListener("click", () => click(this.lang));
+    div.addEventListener("click", (e) => {
+      if (this.keyEvent == "Backspace") {
+        animation();
+        return backspace();
+      }
+      if (this.keyEvent == "Space") {
+        animation();
+        return space();
+      }
+      if (this.keyEvent == "Tab") {
+        animation();
+        return tab();
+      }
+      if (this.keyEvent == "Enter") {
+        animation();
+        return enter();
+      }
+      if (this.keyEvent == "CapsLock") {
+        return this.caps ? animationPressed() : animationUnPressed();
+      }
+      if (this.keyEvent == "ShiftLeft" || this.keyEvent == "ShiftRight") {
+        return;
+      }
+      if (this.keyEvent == "ControlLeft" || this.keyEvent == "ControlRight") {
+        return animation();
+      }
+      if (this.keyEvent == "AltLeft" || this.keyEvent == "AltRight") {
+        return animation();
+      }
+      if (this.keyEvent == "Delete") {
+        animation();
+        return deleteKey();
+      }
+      if (this.keyEvent) {
+        animation();
+        click(this.lang);
+      }
+    });
+
     this.div = div;
     return div;
 
@@ -90,15 +132,30 @@ export default class keyElement {
     function backspace() {
       let textarea = document.querySelector("textarea");
       if (textarea.selectionStart == textarea.selectionEnd) {
-        textarea.value = textarea.value.slice(0, textarea.value.length-1);
+        textarea.value = textarea.value.slice(0, textarea.value.length - 1);
       } else {
         textarea.value = textarea.value.slice(0, textarea.selectionStart) + textarea.value.slice(textarea.selectionEnd);
       }
     }
 
+    function deleteKey() {
+      let textarea = document.querySelector("textarea");
+      if (textarea.selectionStart == textarea.selectionEnd) {
+        textarea.value = textarea.value.slice(0, textarea.selectionStart) + textarea.value.slice(textarea.selectionEnd + 1);
+      } else {
+        textarea.value = textarea.value.slice(0, textarea.selectionStart) + textarea.value.slice(textarea.selectionEnd);
+      }
+      textarea.focus();
+      textarea.setSelectionRange(0, 0);
+    }
+
     function space() {
       let textarea = document.querySelector("textarea");
       textarea.value += " ";
+    }
+    function animation() {
+      animationPressed();
+      setTimeout(() => animationUnPressed(), 200);
     }
     function animationPressed() {
       div.classList.add("pressed");
@@ -119,7 +176,7 @@ export default class keyElement {
     this.div.textContent = this.lang;
     if (this.caps) {
       this.div.textContent = this.div.textContent.length > 1 ? this.div.textContent : this.div.textContent.toLocaleLowerCase();
-    } 
+    }
   }
 
   set shiftDown(value) {
@@ -128,7 +185,7 @@ export default class keyElement {
     this.div.textContent = this.lang;
     if (this.caps) {
       this.div.textContent = this.div.textContent.length > 1 ? this.div.textContent : this.div.textContent.toLocaleUpperCase();
-    } 
+    }
   }
 
   set capsLock(value) {

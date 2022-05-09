@@ -31,8 +31,6 @@ for (let i = 55; i < 64; i++) {
   arrKeys[i].language = "en";
 }
 
-// 
-
 window.addEventListener("keydown", (e) => {
   if (e.ctrlKey && e.altKey) {
     window.lang = window.lang == "en" ? "ru" : "en";
@@ -50,4 +48,22 @@ window.addEventListener("keyup", (e) => {
     window.capsLock = !window.capsLock;
     arrKeys.forEach(el => el.capsLock = window.capsLock);
   }
+});
+
+arrKeys[42].div.addEventListener("mousedown", (e) => {
+  arrKeys.forEach(el => el.shiftUp = window.lang);
+});
+arrKeys[54].div.addEventListener("mousedown", (e) => {
+  arrKeys.forEach(el => el.shiftUp = window.lang);
+});
+arrKeys[42].div.addEventListener("mouseup", (e) => {
+  arrKeys.forEach(el => el.shiftDown = window.lang);
+});
+arrKeys[54].div.addEventListener("mouseup", (e) => {
+  arrKeys.forEach(el => el.shiftDown = window.lang);
+});
+
+arrKeys[28].div.addEventListener("mousedown", (e) => {
+  window.capsLock = !window.capsLock;
+  arrKeys.forEach(el => el.capsLock = window.capsLock);
 });
