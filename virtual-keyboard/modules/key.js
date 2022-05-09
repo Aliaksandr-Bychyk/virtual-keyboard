@@ -15,37 +15,53 @@ export default class keyElement {
     if (this.options.length != 0) {
       this.options.forEach(option => div.classList.add(option));
     }
+
     document.addEventListener("keyup", (e) => {
-      if (e.code == this.keyEvent && e.code == "ShiftLeft") {
+      // if (e.code == this.keyEvent && e.code == "ShiftLeft") {
+      //   return animationUnPressed();
+      // } 
+      // if (e.code == this.keyEvent && e.code == "ShiftRight") {
+      //   return animationUnPressed();
+      // } 
+      if (e.code == this.keyEvent) {
         return animationUnPressed();
       } 
     });
     document.addEventListener("keydown", (e) => {
       e.preventDefault();
       if (e.code == this.keyEvent && (e.altKey || e.ctrlKey)) {
-        return animation();
+        return animationPressed();
       }
       if (e.code == this.keyEvent && e.code == "Backspace") {
-        animation();
+        animationPressed();
         return backspace();
       } 
       if (e.code == this.keyEvent && e.code == "Space") {
-        animation();
+        animationPressed();
         return space();
       } 
       if (e.code == this.keyEvent && e.code == "Tab") {
-        animation();
+        animationPressed();
         return tab();
       } 
       if (e.code == this.keyEvent && e.code == "Enter") {
-        animation();
+        animationPressed();
         return enter();
       } 
       if (e.code == this.keyEvent && e.code == "ShiftLeft") {
         return animationPressed();
       } 
+      if (e.code == this.keyEvent && e.code == "ShiftRight") {
+        return animationPressed();
+      } 
+      if (e.code == this.keyEvent && e.code == "ControlLeft") {
+        return animationPressed();
+      } 
+      if (e.code == this.keyEvent && e.code == "ControlRight") {
+        return animationPressed();
+      } 
       if (e.code == this.keyEvent) {
-        animation();
+        animationPressed();
         return click(this.lang);
       }
     });
@@ -81,10 +97,6 @@ export default class keyElement {
     function space() {
       let textarea = document.querySelector("textarea");
       textarea.value += " ";
-    }
-    function animation() {
-      div.classList.add("pressed");
-      setTimeout(() => div.classList.remove("pressed"), 200);
     }
     function animationPressed() {
       div.classList.add("pressed");
