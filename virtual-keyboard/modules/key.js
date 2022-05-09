@@ -66,6 +66,22 @@ export default class keyElement {
         animationPressed();
         return deleteKey();
       }
+      if (e.code == this.keyEvent && e.code == "ArrowLeft") {
+        animationPressed();
+        return control("left");
+      }
+      if (e.code == this.keyEvent && e.code == "ArrowRight") {
+        animationPressed();
+        return control("right");
+      }
+      if (e.code == this.keyEvent && e.code == "ArrowUp") {
+        animationPressed();
+        return control("up");
+      }
+      if (e.code == this.keyEvent && e.code == "ArrowDown") {
+        animationPressed();
+        return control("down");
+      }
       if (e.code == this.keyEvent) {
         animationPressed();
         return click(this.lang);
@@ -73,6 +89,22 @@ export default class keyElement {
     });
 
     div.addEventListener("click", (e) => {
+      if (this.keyEvent == "ArrowLeft") {
+        animation();
+        return control("left");
+      }
+      if (this.keyEvent == "ArrowRight") {
+        animation();
+        return control("right");
+      }
+      if (this.keyEvent == "ArrowUp") {
+        animation();
+        return control("up");
+      }
+      if (this.keyEvent == "ArrowDown") {
+        animation();
+        return control("down");
+      }
       if (this.keyEvent == "Backspace") {
         animation();
         return backspace();
@@ -116,20 +148,33 @@ export default class keyElement {
 
     function click(lang) {
       let textarea = document.querySelector("textarea");
-      textarea.value += lang;
+      let start = textarea.selectionStart;
+      let end = textarea.selectionEnd;
+      let newLine = textarea.value.slice(0, start);
+      textarea.value = newLine + lang + textarea.value.slice(end);
+      textarea.focus();
+      textarea.setSelectionRange(newLine.length+1, newLine.length+1);
       textarea.focus();
     }
 
     function enter() {
       let textarea = document.querySelector("textarea");
-      textarea.value += "\n";
+      let start = textarea.selectionStart;
+      let end = textarea.selectionEnd;
+      let newLine = textarea.value.slice(0, start);
+      textarea.value = newLine + "\n" + textarea.value.slice(end);
       textarea.focus();
+      textarea.setSelectionRange(newLine.length+1, newLine.length+1);
     }
 
     function tab() {
       let textarea = document.querySelector("textarea");
-      textarea.value += "    ";
+      let start = textarea.selectionStart;
+      let end = textarea.selectionEnd;
+      let newLine = textarea.value.slice(0, start);
+      textarea.value = newLine + "    " + textarea.value.slice(end);
       textarea.focus();
+      textarea.setSelectionRange(newLine.length+4, newLine.length+4);
     }
 
     function backspace() {
@@ -172,6 +217,26 @@ export default class keyElement {
     }
     function animationUnPressed() {
       div.classList.remove("pressed");
+    }
+    function control(value) {
+      let textarea = document.querySelector("textarea");
+      let start = textarea.selectionStart;
+      let end = textarea.textContent.length-1;
+      textarea.focus();
+      switch (value) {
+        case "left":
+          textarea.setSelectionRange(start-1, start-1);
+          break;
+        case "right":
+          textarea.setSelectionRange(start+1, start+1);
+          break;
+        case "up":
+          textarea.setSelectionRange(0, 0);
+          break;
+        case "down":
+          textarea.setSelectionRange(end, end);
+          break;
+      }
     }
   }
 
