@@ -91,13 +91,23 @@ textarea::placeholder {
   box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1);
   color: #ffffff;
 }
+.key.pressed {
+  background-color: #C850C0;
+}
 .key.--special:hover {
   background-color: #FFCC70;
   color: #000000;
 }
+.key.--special.pressed {
+  background-color: #FFCC70;
+}
 .key.--let-grow {
   padding: 0 10px;
   flex-grow: 1;
+}
+.key.--space {
+  padding: 0 10px;
+  flex-grow: 10;
 }
 .key.--arrow-up {
   background-image: url(./images/svg/arrow-up.svg);
