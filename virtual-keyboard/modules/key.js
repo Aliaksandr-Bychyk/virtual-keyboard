@@ -117,41 +117,51 @@ export default class keyElement {
     function click(lang) {
       let textarea = document.querySelector("textarea");
       textarea.value += lang;
+      textarea.focus();
     }
 
     function enter() {
       let textarea = document.querySelector("textarea");
       textarea.value += "\n";
+      textarea.focus();
     }
 
     function tab() {
       let textarea = document.querySelector("textarea");
       textarea.value += "    ";
+      textarea.focus();
     }
 
     function backspace() {
       let textarea = document.querySelector("textarea");
-      if (textarea.selectionStart == textarea.selectionEnd) {
-        textarea.value = textarea.value.slice(0, textarea.value.length - 1);
+      let start = textarea.selectionStart;
+      let end = textarea.selectionEnd;
+      if (start == end) {
+        textarea.value = textarea.value.slice(0, start - 1) + textarea.value.slice(end);
       } else {
-        textarea.value = textarea.value.slice(0, textarea.selectionStart) + textarea.value.slice(textarea.selectionEnd);
+        textarea.value = textarea.value.slice(0, start) + textarea.value.slice(end);
       }
+      textarea.focus();
+      textarea.setSelectionRange(start-1, start-1);
     }
 
     function deleteKey() {
       let textarea = document.querySelector("textarea");
-      if (textarea.selectionStart == textarea.selectionEnd) {
-        textarea.value = textarea.value.slice(0, textarea.selectionStart) + textarea.value.slice(textarea.selectionEnd + 1);
+      let start = textarea.selectionStart;
+      let end = textarea.selectionEnd;
+      if (start == end) {
+        textarea.value = textarea.value.slice(0, start) + textarea.value.slice(end + 1);
       } else {
-        textarea.value = textarea.value.slice(0, textarea.selectionStart) + textarea.value.slice(textarea.selectionEnd);
+        textarea.value = textarea.value.slice(0, start) + textarea.value.slice(end);
       }
       textarea.focus();
-      textarea.setSelectionRange(0, 0);
+      textarea.setSelectionRange(start, start);
     }
 
     function space() {
       let textarea = document.querySelector("textarea");
       textarea.value += " ";
+      textarea.focus();
     }
     function animation() {
       animationPressed();
