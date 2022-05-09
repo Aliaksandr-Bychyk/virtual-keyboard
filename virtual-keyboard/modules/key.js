@@ -205,8 +205,12 @@ export default class keyElement {
 
     function space() {
       let textarea = document.querySelector("textarea");
-      textarea.value += " ";
+      let start = textarea.selectionStart;
+      let end = textarea.selectionEnd;
+      let newLine = textarea.value.slice(0, start);
+      textarea.value = newLine + " " + textarea.value.slice(end);
       textarea.focus();
+      textarea.setSelectionRange(newLine.length+1, newLine.length+1);
     }
     function animation() {
       animationPressed();
