@@ -1,0 +1,116 @@
+* {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+html {
+  height: 100%;
+  overflow-y: hidden;
+}
+body {
+  height: 100%;
+  background-color: #4158D0;
+  background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+  
+}
+.canvas {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80vw;
+  width: 960px;
+  height: 80vh;
+  margin: 10vh auto;
+  align-self: center;
+}
+h1 {
+  width: fit-content;
+  padding: 10px 30px;
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: 900;
+}
+h2 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 500;
+}
+textarea {
+  border: none;
+  border-radius: 16px;
+  height: 20vh;
+  outline: none;
+  padding: 10px;
+  resize: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+textarea::placeholder {
+  color: #C850C0;
+}
+.glass {
+  background: rgba(255, 255, 255, 0.555);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5.5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.board {
+  display: flex;
+  flex-direction: column;
+  height: 265px;
+  width: 920px;
+  margin: 20px auto;
+  gap: 10px;
+}
+.board-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: nowrap;
+}
+.key {
+  text-align: center;
+  vertical-align: middle;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  font-size: 22px;
+  font-weight: 500;
+  user-select: none;
+  cursor: pointer;
+  transition: 0.3s;
+  background-size: 20px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.key:hover {
+  background-color: #4158D0;
+  box-shadow: 0 3px 1px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+}
+.key.--special:hover {
+  background-color: #FFCC70;
+  color: #000000;
+}
+.key.--let-grow {
+  padding: 0 10px;
+  flex-grow: 1;
+}
+.key.--arrow-up {
+  background-image: url(./images/svg/arrow-up.svg);
+}
+.key.--arrow-left {
+  background-image: url(./images/svg/arrow-left.svg);
+}
+.key.--arrow-down {
+  background-image: url(./images/svg/arrow-down.svg);
+}
+.key.--arrow-right {
+  background-image: url(./images/svg/arrow-right.svg);
+}
+.key.--win {
+  background-image: url(./images/svg/microsoft-windows.svg);
+}
