@@ -1,8 +1,11 @@
 "use strict";
+import canvas from "./modules/canvas.js";
 import keyElement from "./modules/key.js";
 import keysData from "./modules/keysData.js";
 
 (localStorage.getItem("lang") == null) && localStorage.setItem("lang", "en");
+
+document.body.append(canvas());
 
 window.capsLock = false;
 
