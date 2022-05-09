@@ -7,6 +7,8 @@ export default class keyElement {
     this.options = options;
     this.keyEvent = keyEvent;
     this.lang = this.en;
+    this.shift = false;
+    this.caps = false;
   }
   create() {
     
@@ -17,12 +19,9 @@ export default class keyElement {
     }
 
     document.addEventListener("keyup", (e) => {
-      // if (e.code == this.keyEvent && e.code == "ShiftLeft") {
-      //   return animationUnPressed();
-      // } 
-      // if (e.code == this.keyEvent && e.code == "ShiftRight") {
-      //   return animationUnPressed();
-      // } 
+      if (e.code == this.keyEvent && e.code == "CapsLock") {
+        return this.caps ? animationUnPressed() : animationPressed();
+      } 
       if (e.code == this.keyEvent) {
         return animationUnPressed();
       } 
@@ -58,6 +57,9 @@ export default class keyElement {
         return animationPressed();
       } 
       if (e.code == this.keyEvent && e.code == "ControlRight") {
+        return animationPressed();
+      } 
+      if (e.code == this.keyEvent && e.code == "CapsLock") {
         return animationPressed();
       } 
       if (e.code == this.keyEvent) {
@@ -112,12 +114,34 @@ export default class keyElement {
   }
 
   set shiftUp(value) {
+    this.shift = true;
     this.lang = value == "en" ? this.enShift : this.ruShift;
     this.div.textContent = this.lang;
+    if (this.caps) {
+      this.div.textContent = this.div.textContent.length > 1 ? this.div.textContent : this.div.textContent.toLocaleLowerCase();
+    } 
   }
 
   set shiftDown(value) {
+    this.shift = false;
     this.lang = value == "en" ? this.en : this.ru;
     this.div.textContent = this.lang;
+    if (this.caps) {
+      this.div.textContent = this.div.textContent.length > 1 ? this.div.textContent : this.div.textContent.toLocaleUpperCase();
+    } 
+  }
+
+  set capsLock(value) {
+    this.caps = value;
+    if (this.shift) {
+      this.div.textContent = this.div.textContent.length > 1 ? this.div.textContent : this.div.textContent.toLocaleLowerCase();
+    } else if (this.caps) {
+      this.div.textContent = this.div.textContent.length > 1 ? this.div.textContent : this.div.textContent.toLocaleUpperCase();
+    } else {
+      this.div.textContent = this.div.textContent.length > 1 ? this.div.textContent : this.div.textContent.toLocaleLowerCase();
+    }
+    if (!this.caps && this.shift) {
+      this.div.textContent = this.div.textContent.length > 1 ? this.div.textContent : this.div.textContent.toLocaleUpperCase();
+    }
   }
 }
