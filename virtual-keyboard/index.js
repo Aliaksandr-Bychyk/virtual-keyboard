@@ -1,9 +1,8 @@
-"use strict";
 import canvas from "./modules/canvas.js";
-import keyElement from "./modules/key.js";
+import KeyElement from "./modules/key.js";
 import keysData from "./modules/keysData.js";
 
-(localStorage.getItem("lang") == null) && localStorage.setItem("lang", "en");
+(localStorage.getItem("lang") === null) && localStorage.setItem("lang", "en");
 
 document.body.append(canvas());
 
@@ -11,7 +10,7 @@ window.capsLock = false;
 
 let arrKeys = [];
 keysData.forEach(el => arrKeys.push(
-  new keyElement(el.en, el.enShift, el.ru, el.ruShift, el.options, el.keyEvent)
+  new KeyElement(el.en, el.enShift, el.ru, el.ruShift, el.keyEvent, el.options)
 ));
 
 for (let i = 0; i < 14; i++) {
@@ -37,41 +36,41 @@ for (let i = 55; i < 64; i++) {
 
 window.addEventListener("keydown", (e) => {
   if (e.ctrlKey && e.altKey) {
-    if (localStorage.getItem("lang") == "en") {
+    if (localStorage.getItem("lang") === "en") {
       localStorage.setItem("lang", "ru");
     } else {
       localStorage.setItem("lang", "en");
     }
-    arrKeys.forEach(el => el.language = localStorage.getItem("lang"));
+    arrKeys.forEach(el => { return (el.language = localStorage.getItem("lang")); });
   }
   if (e.shiftKey) {
-    arrKeys.forEach(el => el.shiftUp = localStorage.getItem("lang"));
+    arrKeys.forEach(el => (el.shiftUp = localStorage.getItem("lang")));
   }
 });
 window.addEventListener("keyup", (e) => {
   if (!e.shiftKey) {
-    arrKeys.forEach(el => el.shiftDown = localStorage.getItem("lang"));
+    arrKeys.forEach(el => (el.shiftDown = localStorage.getItem("lang")));
   }
-  if (e.code == "CapsLock") {
+  if (e.code === "CapsLock") {
     window.capsLock = !window.capsLock;
-    arrKeys.forEach(el => el.capsLock = window.capsLock);
+    arrKeys.forEach(el => (el.capsLock = window.capsLock));
   }
 });
 
 arrKeys[42].div.addEventListener("mousedown", () => {
-  arrKeys.forEach(el => el.shiftUp = localStorage.getItem("lang"));
+  arrKeys.forEach(el => (el.shiftUp = localStorage.getItem("lang")));
 });
 arrKeys[54].div.addEventListener("mousedown", () => {
-  arrKeys.forEach(el => el.shiftUp = localStorage.getItem("lang"));
+  arrKeys.forEach(el => (el.shiftUp = localStorage.getItem("lang")));
 });
 arrKeys[42].div.addEventListener("mouseup", () => {
-  arrKeys.forEach(el => el.shiftDown = localStorage.getItem("lang"));
+  arrKeys.forEach(el => (el.shiftDown = localStorage.getItem("lang")));
 });
 arrKeys[54].div.addEventListener("mouseup", () => {
-  arrKeys.forEach(el => el.shiftDown = localStorage.getItem("lang"));
+  arrKeys.forEach(el => (el.shiftDown = localStorage.getItem("lang")));
 });
 
 arrKeys[28].div.addEventListener("mousedown", () => {
   window.capsLock = !window.capsLock;
-  arrKeys.forEach(el => el.capsLock = window.capsLock);
+  arrKeys.forEach(el => (el.capsLock = window.capsLock));
 });
