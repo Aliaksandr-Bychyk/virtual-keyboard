@@ -5,7 +5,7 @@ const keysData = [
     ru: "ё",
     ruShift: "Ё",
     options: ["key"],
-    keyEvent: "Backquote",
+    keyEvent: "Backquote"
   },
   {
     en: "1",
@@ -13,7 +13,7 @@ const keysData = [
     ru: "1",
     ruShift: "!",
     options: ["key"],
-    keyEvent: "Digit1",
+    keyEvent: "Digit1"
   },
   {
     en: "2",
@@ -21,7 +21,7 @@ const keysData = [
     ru: "2",
     ruShift: "\"",
     options: ["key"],
-    keyEvent: "Digit2",
+    keyEvent: "Digit2"
   },
   {
     en: "3",
@@ -29,7 +29,7 @@ const keysData = [
     ru: "3",
     ruShift: "№",
     options: ["key"],
-    keyEvent: "Digit3",
+    keyEvent: "Digit3"
   },
   {
     en: "4",
@@ -37,7 +37,7 @@ const keysData = [
     ru: "4",
     ruShift: ";",
     options: ["key"],
-    keyEvent: "Digit4",
+    keyEvent: "Digit4"
   },
   {
     en: "5",
@@ -45,7 +45,7 @@ const keysData = [
     ru: "5",
     ruShift: "%",
     options: ["key"],
-    keyEvent: "Digit5",
+    keyEvent: "Digit5"
   },
   {
     en: "6",
@@ -53,7 +53,7 @@ const keysData = [
     ru: "6",
     ruShift: ":",
     options: ["key"],
-    keyEvent: "Digit6",
+    keyEvent: "Digit6"
   },
   {
     en: "7",
@@ -61,7 +61,7 @@ const keysData = [
     ru: "7",
     ruShift: "?",
     options: ["key"],
-    keyEvent: "Digit7",
+    keyEvent: "Digit7"
   },
   {
     en: "8",
@@ -69,7 +69,7 @@ const keysData = [
     ru: "8",
     ruShift: "*",
     options: ["key"],
-    keyEvent: "Digit8",
+    keyEvent: "Digit8"
   },
   {
     en: "9",
@@ -77,7 +77,7 @@ const keysData = [
     ru: "9",
     ruShift: "(",
     options: ["key"],
-    keyEvent: "Digit9",
+    keyEvent: "Digit9"
   },
   {
     en: "0",
@@ -85,7 +85,7 @@ const keysData = [
     ru: "0",
     ruShift: ")",
     options: ["key"],
-    keyEvent: "Digit0",
+    keyEvent: "Digit0"
   },
   {
     en: "-",
@@ -93,7 +93,7 @@ const keysData = [
     ru: "-",
     ruShift: "_",
     options: ["key"],
-    keyEvent: "Minus",
+    keyEvent: "Minus"
   },
   {
     en: "=",
@@ -101,7 +101,7 @@ const keysData = [
     ru: "=",
     ruShift: "+",
     options: ["key"],
-    keyEvent: "Equal",
+    keyEvent: "Equal"
   },
   {
     en: "Backspace",
@@ -109,18 +109,16 @@ const keysData = [
     ru: "Backspace",
     ruShift: "Backspace",
     options: ["key", "--special", "--let-grow"],
-    keyEvent: "Backspace",
+    keyEvent: "Backspace"
   },
 
-
-  
   {
     en: "Tab",
     enShift: "Tab",
     ru: "Tab",
     ruShift: "Tab",
     options: ["key", "--special", "--let-grow"],
-    keyEvent: "Tab",
+    keyEvent: "Tab"
   },
   {
     en: "q",
@@ -128,7 +126,7 @@ const keysData = [
     ru: "й",
     ruShift: "Й",
     options: ["key"],
-    keyEvent: "KeyQ",
+    keyEvent: "KeyQ"
   },
   {
     en: "w",
@@ -136,7 +134,7 @@ const keysData = [
     ru: "ц",
     ruShift: "Ц",
     options: ["key"],
-    keyEvent: "KeyW",
+    keyEvent: "KeyW"
   },
   {
     en: "e",
@@ -144,7 +142,7 @@ const keysData = [
     ru: "у",
     ruShift: "У",
     options: ["key"],
-    keyEvent: "KeyE",
+    keyEvent: "KeyE"
   },
   {
     en: "r",
@@ -152,7 +150,7 @@ const keysData = [
     ru: "к",
     ruShift: "К",
     options: ["key"],
-    keyEvent: "KeyR",
+    keyEvent: "KeyR"
   },
   {
     en: "t",
@@ -160,7 +158,7 @@ const keysData = [
     ru: "е",
     ruShift: "Е",
     options: ["key"],
-    keyEvent: "KeyT",
+    keyEvent: "KeyT"
   },
   {
     en: "y",
@@ -168,7 +166,7 @@ const keysData = [
     ru: "н",
     ruShift: "Н",
     options: ["key"],
-    keyEvent: "KeyY",
+    keyEvent: "KeyY"
   },
   {
     en: "u",
@@ -176,7 +174,7 @@ const keysData = [
     ru: "г",
     ruShift: "Г",
     options: ["key"],
-    keyEvent: "KeyU",
+    keyEvent: "KeyU"
   },
   {
     en: "i",
@@ -184,7 +182,7 @@ const keysData = [
     ru: "ш",
     ruShift: "Ш",
     options: ["key"],
-    keyEvent: "KeyI",
+    keyEvent: "KeyI"
   },
   {
     en: "o",
@@ -192,7 +190,7 @@ const keysData = [
     ru: "щ",
     ruShift: "Щ",
     options: ["key"],
-    keyEvent: "KeyO",
+    keyEvent: "KeyO"
   },
   {
     en: "p",
@@ -200,7 +198,7 @@ const keysData = [
     ru: "з",
     ruShift: "З",
     options: ["key"],
-    keyEvent: "KeyP",
+    keyEvent: "KeyP"
   },
   {
     en: "[",
@@ -208,7 +206,7 @@ const keysData = [
     ru: "х",
     ruShift: "Х",
     options: ["key"],
-    keyEvent: "BracketLeft",
+    keyEvent: "BracketLeft"
   },
   {
     en: "]",
@@ -216,7 +214,7 @@ const keysData = [
     ru: "ъ",
     ruShift: "Ъ",
     options: ["key"],
-    keyEvent: "BracketRight",
+    keyEvent: "BracketRight"
   },
   {
     en: "Delete",
@@ -224,18 +222,16 @@ const keysData = [
     ru: "Delete",
     ruShift: "Delete",
     options: ["key", "--special", "--let-grow"],
-    keyEvent: "Delete",
+    keyEvent: "Delete"
   },
 
-
-  
   {
     en: "CapsLock",
     enShift: "CapsLock",
     ru: "CapsLock",
     ruShift: "CapsLock",
     options: ["key", "--special", "--let-grow"],
-    keyEvent: "CapsLock",
+    keyEvent: "CapsLock"
   },
   {
     en: "a",
@@ -243,7 +239,7 @@ const keysData = [
     ru: "ф",
     ruShift: "Ф",
     options: ["key"],
-    keyEvent: "KeyA",
+    keyEvent: "KeyA"
   },
   {
     en: "s",
@@ -251,7 +247,7 @@ const keysData = [
     ru: "ы",
     ruShift: "Ы",
     options: ["key"],
-    keyEvent: "KeyS",
+    keyEvent: "KeyS"
   },
   {
     en: "d",
@@ -259,7 +255,7 @@ const keysData = [
     ru: "в",
     ruShift: "В",
     options: ["key"],
-    keyEvent: "KeyD",
+    keyEvent: "KeyD"
   },
   {
     en: "f",
@@ -267,7 +263,7 @@ const keysData = [
     ru: "а",
     ruShift: "А",
     options: ["key"],
-    keyEvent: "KeyF",
+    keyEvent: "KeyF"
   },
   {
     en: "g",
@@ -275,7 +271,7 @@ const keysData = [
     ru: "п",
     ruShift: "П",
     options: ["key"],
-    keyEvent: "KeyG",
+    keyEvent: "KeyG"
   },
   {
     en: "h",
@@ -283,7 +279,7 @@ const keysData = [
     ru: "р",
     ruShift: "Р",
     options: ["key"],
-    keyEvent: "KeyH",
+    keyEvent: "KeyH"
   },
   {
     en: "j",
@@ -291,7 +287,7 @@ const keysData = [
     ru: "о",
     ruShift: "О",
     options: ["key"],
-    keyEvent: "KeyJ",
+    keyEvent: "KeyJ"
   },
   {
     en: "k",
@@ -299,7 +295,7 @@ const keysData = [
     ru: "л",
     ruShift: "Л",
     options: ["key"],
-    keyEvent: "KeyK",
+    keyEvent: "KeyK"
   },
   {
     en: "l",
@@ -307,7 +303,7 @@ const keysData = [
     ru: "д",
     ruShift: "Д",
     options: ["key"],
-    keyEvent: "KeyL",
+    keyEvent: "KeyL"
   },
   {
     en: ";",
@@ -315,7 +311,7 @@ const keysData = [
     ru: "ж",
     ruShift: "Ж",
     options: ["key"],
-    keyEvent: "Semicolon",
+    keyEvent: "Semicolon"
   },
   {
     en: "'",
@@ -323,7 +319,7 @@ const keysData = [
     ru: "э",
     ruShift: "Э",
     options: ["key"],
-    keyEvent: "Quote",
+    keyEvent: "Quote"
   },
   {
     en: "\\",
@@ -331,7 +327,7 @@ const keysData = [
     ru: "\\",
     ruShift: "/",
     options: ["key"],
-    keyEvent: "Backslash",
+    keyEvent: "Backslash"
   },
   {
     en: "Enter",
@@ -339,18 +335,16 @@ const keysData = [
     ru: "Enter",
     ruShift: "Enter",
     options: ["key", "--special", "--let-grow"],
-    keyEvent: "Enter",
+    keyEvent: "Enter"
   },
 
-
-  
   {
     en: "Shift",
     enShift: "Shift",
     ru: "Shift",
     ruShift: "Shift",
     options: ["key", "--special", "--let-grow"],
-    keyEvent: "ShiftLeft",
+    keyEvent: "ShiftLeft"
   },
   {
     en: "z",
@@ -358,7 +352,7 @@ const keysData = [
     ru: "я",
     ruShift: "Я",
     options: ["key"],
-    keyEvent: "KeyZ",
+    keyEvent: "KeyZ"
   },
   {
     en: "x",
@@ -366,7 +360,7 @@ const keysData = [
     ru: "ч",
     ruShift: "Ч",
     options: ["key"],
-    keyEvent: "KeyX",
+    keyEvent: "KeyX"
   },
   {
     en: "c",
@@ -374,7 +368,7 @@ const keysData = [
     ru: "с",
     ruShift: "С",
     options: ["key"],
-    keyEvent: "KeyC",
+    keyEvent: "KeyC"
   },
   {
     en: "v",
@@ -382,7 +376,7 @@ const keysData = [
     ru: "м",
     ruShift: "М",
     options: ["key"],
-    keyEvent: "KeyV",
+    keyEvent: "KeyV"
   },
   {
     en: "b",
@@ -390,7 +384,7 @@ const keysData = [
     ru: "и",
     ruShift: "И",
     options: ["key"],
-    keyEvent: "KeyB",
+    keyEvent: "KeyB"
   },
   {
     en: "n",
@@ -398,7 +392,7 @@ const keysData = [
     ru: "т",
     ruShift: "Т",
     options: ["key"],
-    keyEvent: "KeyN",
+    keyEvent: "KeyN"
   },
   {
     en: "m",
@@ -406,7 +400,7 @@ const keysData = [
     ru: "ь",
     ruShift: "Ь",
     options: ["key"],
-    keyEvent: "KeyM",
+    keyEvent: "KeyM"
   },
   {
     en: ",",
@@ -414,7 +408,7 @@ const keysData = [
     ru: "б",
     ruShift: "Б",
     options: ["key"],
-    keyEvent: "Comma",
+    keyEvent: "Comma"
   },
   {
     en: ".",
@@ -422,7 +416,7 @@ const keysData = [
     ru: "ю",
     ruShift: "Ю",
     options: ["key"],
-    keyEvent: "Period",
+    keyEvent: "Period"
   },
   {
     en: "/",
@@ -430,7 +424,7 @@ const keysData = [
     ru: ".",
     ruShift: ",",
     options: ["key"],
-    keyEvent: "Slash",
+    keyEvent: "Slash"
   },
   {
     en: "",
@@ -438,7 +432,7 @@ const keysData = [
     ru: "",
     ruShift: "",
     options: ["key", "--special", "--arrow-up"],
-    keyEvent: "ArrowUp",
+    keyEvent: "ArrowUp"
   },
   {
     en: "Shift",
@@ -446,18 +440,16 @@ const keysData = [
     ru: "Shift",
     ruShift: "Shift",
     options: ["key", "--special", "--let-grow"],
-    keyEvent: "ShiftRight",
+    keyEvent: "ShiftRight"
   },
 
-
-  
   {
     en: "Ctrl",
     enShift: "Ctrl",
     ru: "Ctrl",
     ruShift: "Ctrl",
     options: ["key", "--special", "--let-grow"],
-    keyEvent: "ControlLeft",
+    keyEvent: "ControlLeft"
   },
   {
     en: "",
@@ -465,7 +457,7 @@ const keysData = [
     ru: "",
     ruShift: "",
     options: ["key", "--special", "--win"],
-    keyEvent: "MetaLeft",
+    keyEvent: "MetaLeft"
   },
   {
     en: "Alt",
@@ -473,7 +465,7 @@ const keysData = [
     ru: "Alt",
     ruShift: "Alt",
     options: ["key", "--special"],
-    keyEvent: "AltLeft",
+    keyEvent: "AltLeft"
   },
   {
     en: "Space",
@@ -481,7 +473,7 @@ const keysData = [
     ru: "Space",
     ruShift: "Space",
     options: ["key", "--special", "--space"],
-    keyEvent: "Space",
+    keyEvent: "Space"
   },
   {
     en: "Alt",
@@ -489,7 +481,7 @@ const keysData = [
     ru: "Alt",
     ruShift: "Alt",
     options: ["key", "--special"],
-    keyEvent: "AltRight",
+    keyEvent: "AltRight"
   },
   {
     en: "",
@@ -497,7 +489,7 @@ const keysData = [
     ru: "",
     ruShift: "",
     options: ["key", "--special", "--arrow-left"],
-    keyEvent: "ArrowLeft",
+    keyEvent: "ArrowLeft"
   },
   {
     en: "",
@@ -505,7 +497,7 @@ const keysData = [
     ru: "",
     ruShift: "",
     options: ["key", "--special", "--arrow-down"],
-    keyEvent: "ArrowDown",
+    keyEvent: "ArrowDown"
   },
   {
     en: "",
@@ -513,7 +505,7 @@ const keysData = [
     ru: "",
     ruShift: "",
     options: ["key", "--special", "--arrow-right"],
-    keyEvent: "ArrowRight",
+    keyEvent: "ArrowRight"
   },
   {
     en: "Ctrl",
@@ -521,7 +513,7 @@ const keysData = [
     ru: "Ctrl",
     ruShift: "Ctrl",
     options: ["key", "--special", "--let-grow"],
-    keyEvent: "ControlRight",
-  },
+    keyEvent: "ControlRight"
+  }
 ];
 export default keysData;
